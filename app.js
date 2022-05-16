@@ -8,6 +8,8 @@ const productsRoutes = require("./routes/productsRoutes");
 
 app.engine('handlebars', exphbs.engine());
 app.set('view engine', 'handlebars');
+app.use(express.static('public'));
+
 app.get('/', (req, res) => {
 
   res.send(`<h1>Bem vindo ao Express com Mongo!!!</h1>`)
@@ -17,7 +19,7 @@ express.urlencoded({
      extended: true,
    })
  );
-
-app.use(express.json());
+app.use('/products',productsRoutes)
+//app.use(express.json());
 app.listen(3000)
   
