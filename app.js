@@ -1,13 +1,18 @@
-const express = require('express')
-const conn = require('./database/conn')
-const app = express()
-const port = 3000
+const express = require("express");
+const exphbs = require("express-handlebars");
+const app = express();
 
-app.get('/', (req, res) => {
-  res.send(`<h1>Hello World com Mongoose na Porta: ${port}</h1>`)
-})
+const conn = require("./database/conn").run;
 
-console.log(conn);
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+app.engine('handlebars', exphbs.engine());
+app.set('view engine', 'handlebars');
+
+ app.use(
+express.urlencoded({
+     extended: true,
+   })
+ );
+
+app.use(express.json());
+app.listen(3000)
+  
