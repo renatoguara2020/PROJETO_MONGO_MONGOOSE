@@ -37,12 +37,12 @@ module.exports = class ProductController{
         res.render('/products/product',{product})
     }
 
-    static async  getProductById(id){
+    // static async  getProductById(id){
 
-        const product =  await conn.db().collection('products').findOne({_id: ObjectId(id)});
+    //     const product =  await conn.db().collection('products').findOne({_id: ObjectId(id)});
 
-        return product;
+    //     return product;
 
 
-    }
+    // }
 }
