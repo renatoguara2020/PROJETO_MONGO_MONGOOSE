@@ -4,6 +4,8 @@ const app = express();
 
 const conn = require("./database/conn").run;
 
+const productsRoutes = require("./routes/productsRoutes");
+
 app.engine('handlebars', exphbs.engine());
 app.set('view engine', 'handlebars');
 app.get('/', (req, res) => {
