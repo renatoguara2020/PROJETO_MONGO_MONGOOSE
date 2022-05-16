@@ -5,7 +5,7 @@ const app = express();
 const conn = require("./database/conn").run;
 
 const productsRoutes = require("./routes/productsRoutes");
-
+app.use(express.json());
 app.engine('handlebars', exphbs.engine());
 app.set('view engine', 'handlebars');
 app.use(express.static('public'));
@@ -20,6 +20,6 @@ express.urlencoded({
    })
  );
 app.use('/products',productsRoutes)
-//app.use(express.json());
+
 app.listen(3000)
   
