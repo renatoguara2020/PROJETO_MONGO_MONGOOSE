@@ -8,7 +8,7 @@ MongoClient.connect(url,(err, db)=> {
  
     console.log("Database Connected Now !!!!!");
     db.close();
-  })
+  });
 }catch(err){
 
   console.error(err)

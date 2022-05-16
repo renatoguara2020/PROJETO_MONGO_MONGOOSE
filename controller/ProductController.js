@@ -7,4 +7,8 @@ module.exports = class ProductController{
 
         res.render('products/all.handlebars')
     }
+    static createProduct(req, res){
+
+        res.render('products/create')
+    }
 }

@@ -1,11 +1,10 @@
 const conn = require('../database/conn')
 
 class Product {
-  constructor(name, price, description, imageUrl) {
+  constructor(name, price, description) {
     this.name = name
     this.price = price
     this.description = description
-    this.imageUrl = imageUrl
   }
 
   save() {
@@ -13,11 +12,10 @@ class Product {
       name: this.name,
       price: this.price,
       description: this.description,
-      imageUrl: this.imageUrl
     })
 
     return product
   }
 }
 
-module.exports = Product
+module.exports = Product;
