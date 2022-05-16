@@ -6,7 +6,10 @@ const conn = require("./database/conn").run;
 
 app.engine('handlebars', exphbs.engine());
 app.set('view engine', 'handlebars');
+app.get('/', (req, res) => {
 
+  res.send(`<h1>Bem vindo ao Express com Mongo!!!</h1>`)
+})
  app.use(
 express.urlencoded({
      extended: true,
