@@ -19,7 +19,7 @@ class Product {
     return product
   }
 
-  static getProducts(){
+  static  getProducts(){
 
     const products = conn.db().collection('products').find().toArray();
 
